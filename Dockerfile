@@ -1,7 +1,7 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
 # Update ComfyUI to latest version for Flux 2 support
-RUN cd /comfyui && git pull
+RUN comfy update
 
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors --relative-path models/vae --filename flux2-vae.safetensors
